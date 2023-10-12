@@ -3,6 +3,8 @@ import 'package:flutter_coockbook/animation/animate_container_property.dart';
 import 'package:flutter_coockbook/animation/animate_page_physic_simulation.dart';
 import 'package:flutter_coockbook/animation/animate_page_route_transition.dart';
 import 'package:flutter_coockbook/animation/animate_with_opacity.dart';
+import 'package:flutter_coockbook/design/add_drawer_to_screen.dart';
+import 'package:flutter_coockbook/design/display_snackbar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -136,7 +138,26 @@ class _MyHomePageState extends State<MyHomePage> {
                   context,
                   MaterialPageRoute(
                       builder: (_) => const AnimateWithOpacity())),
-            )
+            ),
+
+            /// Add drawer to the scaffold.
+            ListTile(
+              title: const Text("Add drawer to scaffold"),
+              tileColor: Colors.green,
+              subtitle:
+                  const Text("Demonstrate how to add drawer to the scaffold"),
+              onTap: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => const AddDrawerToScreen())),
+            ),
+
+            /// Show snackbar .
+            ListTile(
+              title: const Text("Show snackbar"),
+              tileColor: Colors.purple,
+              subtitle: const Text("Demenstrate how to show a snackabr"),
+              onTap: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => const DisplaySnackbar())),
+            ),
           ],
         )
         // This trailing comma makes auto-formatting nicer for build methods.
